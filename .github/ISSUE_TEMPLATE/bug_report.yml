@@ -1,0 +1,119 @@
+name: 🐞 Bug 报告
+description: 非崩溃类问题（玩法/界面/任务/物品行为异常等）
+title: "[Bug] 简要描述问题"
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！请尽量**复现于最新整合包版本**并提供**最小复现步骤**。
+        请勿直接粘贴完整日志到文本框，改用附件或日志链接（mclo.gs / gist / paste 等）。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 提交前检查
+      options:
+        - label: 我已搜索过现有 Issues 与 Wiki，未发现重复
+          required: true
+        - label: 我正在使用整合包的最新正式版/热修
+          required: true
+        - label: 关闭了着色器与所有第三方资源包后仍可复现
+          required: true
+        - label: 在**新世界**中仍可复现（非旧档特有）
+          required: true
+
+  - type: dropdown
+    id: side
+    attributes:
+      label: 发生端
+      options: ["客户端", "服务端", "单人世界（内置服务端）", "多人联机（独立服务端）"]
+    validations:
+      required: true
+
+  - type: input
+    id: pack_version
+    attributes:
+      label: 整合包版本
+      placeholder: 例如 v1.4.2
+    validations:
+      required: true
+
+  - type: input
+    id: mc_version
+    attributes:
+      label: Minecraft 版本
+      placeholder: 例如 1.20.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Mod 加载器
+      options: ["Fabric", "Forge", "NeoForge", "Quilt", "不确定"]
+    validations:
+      required: true
+
+  - type: input
+    id: java
+    attributes:
+      label: Java 版本/发行版
+      placeholder: 例如 Azul/Zulu 21.0.4, Oracle 17.0.11
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: 操作系统 / 启动器
+      placeholder: 例如 Windows 11 / PCL2、Prism、CurseForge、HMCL、MultiMC
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 实际表现
+      description: 发生了什么？（可附截图/视频）
+      placeholder: 清晰描述当前行为
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望表现
+      placeholder: 应该发生什么？
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤（最小化）
+      description: 尽量给出最少步骤能稳定复现的流程
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 是否改动过整合包（增删模组/改配置）
+      placeholder: 如果有，列出改动（模组名与版本、配置路径）
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志/截图/存档（外链或说明）
+      description: |
+        提供 `latest.log`、相关截图/小存档 或外链（mclo.gs、gist、网盘等）。
+      placeholder: 粘贴链接或说明已附加
+  - type: attachments
+    id: attachments
+    attributes:
+      label: 附件上传（可选）
+      description: 建议压缩后上传；支持 .log .txt .zip .gz 等
+      multiple: true
