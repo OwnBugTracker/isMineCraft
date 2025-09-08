@@ -1,6 +1,6 @@
 name: 🐢 性能问题（TPS/FPS）
 description: 服务器 TPS 低、区块卡顿、客户端掉帧等
-title: "[Perf] TPS/FPS 问题简述"
+title: "[Performance] TPS/FPS 问题简述"
 labels: ["type:performance", "status:needs-triage"]
 body:
   - type: markdown
