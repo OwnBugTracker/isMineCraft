@@ -1,6 +1,6 @@
 name: ✨ 功能/平衡建议
 description: 任务、配方、模组取舍、数值平衡等建议
-title: "[Feat] 简要描述你的建议"
+title: "[Feature] 简要描述你的建议"
 labels: ["type:enhancement", "status:idea"]
 body:
   - type: textarea
