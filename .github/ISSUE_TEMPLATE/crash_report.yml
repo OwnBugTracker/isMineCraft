@@ -1,0 +1,89 @@
+name: 💥 崩溃报告（Crash）
+description: 客户端或服务端崩溃/无法进入游戏
+title: "[Crash] 简要描述/崩溃点"
+labels: ["type:crash", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        必填：**崩溃报告/日志**。优先提供 `crash-reports/xxx.txt` 与 `logs/latest.log`。
+        客户端崩溃也请提供启动器导出的完整日志。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 提交前检查
+      options:
+        - label: 复现于整合包最新版本
+          required: true
+        - label: 关闭着色器与资源包后仍崩溃
+          required: true
+        - label: 未手动增删模组；若有改动，已在下方列出
+          required: true
+
+  - type: dropdown
+    id: crash_side
+    attributes:
+      label: 崩溃发生在
+      options: ["客户端启动", "进入世界时（单人）", "联机进入服务器时", "服务端启动", "运行一段时间后"]
+    validations:
+      required: true
+
+  - type: input
+    id: pack_version
+    attributes:
+      label: 整合包版本
+    validations:
+      required: true
+
+  - type: input
+    id: mc_version
+    attributes:
+      label: Minecraft 版本
+    validations:
+      required: false
+
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Mod 加载器
+      options: ["Fabric"]
+    validations:
+      required: false
+
+  - type: input
+    id: java
+    attributes:
+      label: Java 版本/发行版
+      placeholder: 例如 Zulu 21.0.4 / 17.0.11
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 启动游戏/服务器
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 是否改动过整合包
+      placeholder: 列出新增/移除/更换版本的模组与配置
+
+  - type: textarea
+    id: links
+    attributes:
+      label: 日志与崩溃报告链接
+      description: 建议使用 mclo.gs / gist / paste，或上传压缩包到下方附件
+      placeholder: 粘贴链接
+
+  - type: textarea
+    id: textarea
+    attributes:
+      label: 上传日志/崩溃报告（可多选）
