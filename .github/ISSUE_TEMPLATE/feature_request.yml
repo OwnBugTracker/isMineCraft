@@ -1,0 +1,31 @@
+name: ✨ 功能/平衡建议
+description: 任务、配方、模组取舍、数值平衡等建议
+title: "[Feat] 简要描述你的建议"
+labels: ["type:enhancement", "status:idea"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 你想解决什么问题/痛点？
+      placeholder: 例如：某进度卡点过长、某资源获取过于单调等
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你的建议/方案
+      placeholder: 尽量具体（例：配方/数值/任务链调整思路）
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: 可能的影响
+      placeholder: 对难度/性能/兼容性的影响预估
+
+  - type: checkboxes
+    id: extra
+    attributes:
+      label: 其它
+      options:
+        - label: 我愿意在测试分支协助验证与回归
