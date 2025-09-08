@@ -111,8 +111,6 @@ body:
       description: |
         提供 `latest.log`、相关截图/小存档 或外链（mclo.gs、gist、网盘等）。
       placeholder: 粘贴链接或说明已附加
-  - type: attachments
-    id: attachments
     attributes:
       label: 附件上传（可选）
       description: 建议压缩后上传；支持 .log .txt .zip .gz 等
