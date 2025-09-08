@@ -1,0 +1,74 @@
+name: 🐢 性能问题（TPS/FPS）
+description: 服务器 TPS 低、区块卡顿、客户端掉帧等
+title: "[Perf] TPS/FPS 问题简述"
+labels: ["type:performance", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        性能问题需要**证据**：请尽量提供采样报告（服务端推荐 spark profiler，客户端可用 spark/fps monitor）。
+        别忘了标注**发生维度/坐标/在线人数**、**视距/仿真距离**、**是否开启着色器**等。
+
+  - type: dropdown
+    id: perf_side
+    attributes:
+      label: 问题发生在
+      options: ["客户端 FPS", "服务端 TPS", "二者皆有"]
+    validations:
+      required: true
+
+  - type: input
+    id: pack_version
+    attributes:
+      label: 整合包版本
+    validations:
+      required: true
+
+  - type: input
+    id: player_count
+    attributes:
+      label: 在线人数 / 产生问题时
+      placeholder: 例如 1/20 人在线
+
+  - type: input
+    id: distances
+    attributes:
+      label: 视距 / 仿真距离 / 服务器设置
+      placeholder: 例如 12 / 5（服务端 simulation-distance=5）
+
+  - type: textarea
+    id: env
+    attributes:
+      label: 运行环境
+      description: |
+        客户端：CPU/GPU/内存；服务端：CPU 核心数/内存/宿主环境（裸机/虚拟机/Docker）、Java 版本。
+      placeholder: 简要硬件与部署方式
+    validations:
+      required: true
+
+  - type: textarea
+    id: where_when
+    attributes:
+      label: 何时何地变卡
+      placeholder: |
+        维度/坐标：Overworld @ x y z
+        行为：进入某基地/刷怪塔附近/大量 Create 机械运转时
+        着色器/资源包：是否启用
+
+  - type: textarea
+    id: profiler
+    attributes:
+      label: 采样报告链接
+      description: spark HTML 链接或压缩包（/spark profiler --thread server --timeout 90），或客户端采样
+      placeholder: 粘贴链接，或下方上传附件
+
+  - type: textarea
+    id: textarea
+    attributes:
+      label: 采样/日志/截图附件
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 是否改动过整合包
+      placeholder: 若加装了性能类模组/改了 JVM 参数/配置，请列出
