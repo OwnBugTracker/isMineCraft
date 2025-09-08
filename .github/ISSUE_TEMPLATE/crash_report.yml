@@ -1,5 +1,5 @@
 name: 💥 崩溃报告（Crash）
-description: 客户端或服务端崩溃/无法进入游戏
+description: 客户端或服务端崩溃(闪退)/无法进入游戏
 title: "[Crash] 简要描述/崩溃点"
 labels: ["type:crash", "status:needs-triage"]
 body:
